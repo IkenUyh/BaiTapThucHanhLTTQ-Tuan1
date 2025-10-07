@@ -13,7 +13,7 @@ namespace TongSNT
     {
         private int n;
         private static int dem = 0;
-        ~cPrimeSum()
+        public void Dispose()
         {
             n = 0;
             dem--;
@@ -99,6 +99,7 @@ namespace TongSNT
             primeSum.SetN(Convert.ToInt32(Console.ReadLine()));
             System.Console.WriteLine("Tong cac so nguyen to < {0} (sau khi SetN): {1}", primeSum.GetN(), primeSum.TongSoNguyenTo());
             System.Console.WriteLine("\nTong so doi tuong khi tao: " + cPrimeSum.GetDem());
+            primeSum.Dispose();
             System.Console.WriteLine("\n=====KET THUC CHUONG TRINH=====");
         }
     }

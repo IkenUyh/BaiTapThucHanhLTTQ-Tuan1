@@ -14,12 +14,13 @@ namespace MangMotChieu
         private int[] a;
         private int n;
         private static int dem = 0;
-        ~cArray()
-        {
-            a = null;
-            n = 0;
-            dem--;
-            System.Console.WriteLine("Da huy mot mang");
+        public void Dispose() {
+            if (a != null) {
+                a = null;
+                n = 0;
+                dem--;
+                Console.WriteLine("Da giai phong mot mang");
+            }
         }
         public cArray()
         {
@@ -106,7 +107,7 @@ namespace MangMotChieu
         {
             int sum = 0;
             for (int i = 0; i < n; i++)
-                if (a[i] % n != 0)
+                if (a[i] % 2 != 0)
                     sum += a[i];
             return sum;
         }
@@ -164,6 +165,7 @@ namespace MangMotChieu
                 Console.WriteLine("So chinh phuong nho nhat: " + minSquare);
 
             Console.WriteLine("\nTong so doi tuong khi tao: " + cArray.GetDem());
+            arr.Dispose();
             Console.WriteLine("\n=====KET THUC CHUONG TRI=====");
         }
     }
