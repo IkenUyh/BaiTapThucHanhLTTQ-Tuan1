@@ -7,7 +7,7 @@ using System.Globalization;
 using System.IO;
 using System.Collections;
 
-namespace SoNgayTrongThang
+namespace TinhNgayTrongThang
 {
     class CDate
     {
