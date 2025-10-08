@@ -7,7 +7,7 @@ using System.Globalization;
 using System.IO;
 using System.Collections;
 
-namespace DateProgram
+namespace KiemTraNgayHopLe
 {
     class CDate
     {

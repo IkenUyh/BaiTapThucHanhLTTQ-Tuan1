@@ -7,7 +7,7 @@ using System.Globalization;
 using System.IO;
 using System.Collections;
 
-namespace DateCaculator
+namespace SoNgayTrongThang
 {
     class CDate
     {
