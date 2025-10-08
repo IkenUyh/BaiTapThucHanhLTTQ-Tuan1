@@ -1,0 +1,15 @@
+/Users/huy/CODING/Learn-C#/BaiTap6/bin/Debug/net9.0/BaiTap6
+/Users/huy/CODING/Learn-C#/BaiTap6/bin/Debug/net9.0/BaiTap6.deps.json
+/Users/huy/CODING/Learn-C#/BaiTap6/bin/Debug/net9.0/BaiTap6.runtimeconfig.json
+/Users/huy/CODING/Learn-C#/BaiTap6/bin/Debug/net9.0/BaiTap6.dll
+/Users/huy/CODING/Learn-C#/BaiTap6/bin/Debug/net9.0/BaiTap6.pdb
+/Users/huy/CODING/Learn-C#/BaiTap6/obj/Debug/net9.0/BaiTap6.GeneratedMSBuildEditorConfig.editorconfig
+/Users/huy/CODING/Learn-C#/BaiTap6/obj/Debug/net9.0/BaiTap6.AssemblyInfoInputs.cache
+/Users/huy/CODING/Learn-C#/BaiTap6/obj/Debug/net9.0/BaiTap6.AssemblyInfo.cs
+/Users/huy/CODING/Learn-C#/BaiTap6/obj/Debug/net9.0/BaiTap6.csproj.CoreCompileInputs.cache
+/Users/huy/CODING/Learn-C#/BaiTap6/obj/Debug/net9.0/BaiTap6.sourcelink.json
+/Users/huy/CODING/Learn-C#/BaiTap6/obj/Debug/net9.0/BaiTap6.dll
+/Users/huy/CODING/Learn-C#/BaiTap6/obj/Debug/net9.0/refint/BaiTap6.dll
+/Users/huy/CODING/Learn-C#/BaiTap6/obj/Debug/net9.0/BaiTap6.pdb
+/Users/huy/CODING/Learn-C#/BaiTap6/obj/Debug/net9.0/BaiTap6.genruntimeconfig.cache
+/Users/huy/CODING/Learn-C#/BaiTap6/obj/Debug/net9.0/ref/BaiTap6.dll
