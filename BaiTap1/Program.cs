@@ -33,7 +33,10 @@ namespace MangMotChieu
             while (size <= 0)
             {
                 System.Console.Write("Nhap lai so luong phan tu mang > 0: ");
-                size = Convert.ToInt32(Console.ReadLine());
+                string numInput = Console.ReadLine();
+                bool success=int.TryParse(numInput, out size);
+                if(success) Console.WriteLine(size);
+                else Console.WriteLine("Sai dinh dang so nguyen");
             }
             this.n = size;
             a = new int[n];
@@ -80,7 +83,10 @@ namespace MangMotChieu
             do
             {
                 System.Console.Write("Nhap so phan tu cua mang:");
-                n = Convert.ToInt32(Console.ReadLine());
+                string numInput = Console.ReadLine();
+                bool success=int.TryParse(numInput, out n);
+                if(success) Console.WriteLine(n);
+                else Console.WriteLine("Sai dinh dang so nguyen");
                 if (n <= 0) System.Console.WriteLine("So luong phan tu phai > 0! Moi ban nhap lai!");
             } while (n <= 0);
             a = new int[n];
