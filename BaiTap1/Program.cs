@@ -32,11 +32,16 @@ namespace MangMotChieu
         {
             while (size <= 0)
             {
-                System.Console.Write("Nhap lai so luong phan tu mang > 0: ");
-                string numInput = Console.ReadLine();
-                bool success=int.TryParse(numInput, out size);
-                if(success) Console.WriteLine(size);
-                else Console.WriteLine("Sai dinh dang so nguyen");
+                try
+                {
+                    System.Console.Write("Nhap lai so luong phan tu mang > 0: ");
+                    size = Convert.ToInt32(Console.ReadLine());
+                }
+                catch
+                {
+                    System.Console.WriteLine("Khong dung dinh dang so nguyen");
+                    size = -1;
+                }
             }
             this.n = size;
             a = new int[n];
@@ -82,12 +87,18 @@ namespace MangMotChieu
             }
             do
             {
-                System.Console.Write("Nhap so phan tu cua mang:");
-                string numInput = Console.ReadLine();
-                bool success=int.TryParse(numInput, out n);
-                if(success) Console.WriteLine(n);
-                else Console.WriteLine("Sai dinh dang so nguyen");
-                if (n <= 0) System.Console.WriteLine("So luong phan tu phai > 0! Moi ban nhap lai!");
+                try
+                {
+                    System.Console.Write("Nhap so phan tu cua mang: ");
+                    n = Convert.ToInt32(Console.ReadLine());
+                    if (n <= 0)
+                        System.Console.WriteLine("So luong phan tu phai > 0! Moi ban nhap lai!");
+                }
+                catch
+                {
+                    System.Console.WriteLine("Khong dung dinh dang so nguyen");
+                    n = -1;
+                }
             } while (n <= 0);
             a = new int[n];
             Random rng = new Random();
@@ -153,8 +164,22 @@ namespace MangMotChieu
             Console.WriteLine("=====KIEM TRA CHUONG TRINH=====");
             Console.WriteLine("Tong So Doi Tuong: " + cArray.GetDem());
             Console.WriteLine("\n1. Nhap so luong phan tu mang:");
-            Console.Write("Nhap so phan tu: ");
-            int n = Convert.ToInt32(Console.ReadLine());
+            int n = -1;
+            do
+            {
+                try
+                {
+                    System.Console.Write("Nhap so phan tu cua mang: ");
+                    n = Convert.ToInt32(Console.ReadLine());
+                    if (n <= 0)
+                        System.Console.WriteLine("So luong phan tu phai > 0! Moi ban nhap lai!");
+                }
+                catch
+                {
+                    System.Console.WriteLine("Khong dung dinh dang so nguyen");
+                    n = -1;
+                }
+            } while (n <= 0);
             cArray arr = new cArray(n);
             Console.Write("Noi dung mang: ");
             arr.Xuat();
@@ -162,7 +187,6 @@ namespace MangMotChieu
             Console.WriteLine("Tong cac so le: " + arr.TongSoLe());
             Console.WriteLine("\n3. Dem so nguyen to:");
             Console.WriteLine("So luong so nguyen to: " + arr.DemSoNguyenTo());
-
             Console.WriteLine("\n4. Tim so chinh phuong nho nhat:");
             int minSquare = arr.SoChinhPhuongNhoNhat();
             if (minSquare == -1)
