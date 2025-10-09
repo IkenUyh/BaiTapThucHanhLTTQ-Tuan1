@@ -110,9 +110,17 @@ namespace KiemTraNgayHopLe
             this.ngay = ngay;
             while (!KiemTraHopLe())
             {
-                Console.WriteLine("Ngay ban nhap khong hop le!");
-                Console.Write("Moi ban nhap lai: ");
-                this.ngay = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    Console.WriteLine("Ngay ban nhap khong hop le!");
+                    Console.Write("Moi ban nhap lai: ");
+                    this.ngay = Convert.ToInt32(Console.ReadLine());
+                }
+                catch
+                {
+                    System.Console.WriteLine("Khong dung dinh dang so nguyen");
+                    ngay = -1;
+                }
             }
         }
         public void SetThang(int thang)
@@ -120,9 +128,17 @@ namespace KiemTraNgayHopLe
             this.thang = thang;
             while (!KiemTraHopLe())
             {
-                Console.WriteLine("Thang ban nhap khong hop le!");
-                Console.Write("Moi ban nhap lai: ");
-                this.thang = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    Console.WriteLine("Thang ban nhap khong hop le!");
+                    Console.Write("Moi ban nhap lai: ");
+                    this.thang = Convert.ToInt32(Console.ReadLine());
+                }
+                catch
+                {
+                    System.Console.WriteLine("Khong dung dinh dang so nguyen");
+                    thang = -1;
+                }
             }
         }
         public void SetNam(int nam)
@@ -130,9 +146,17 @@ namespace KiemTraNgayHopLe
             this.nam = nam;
             while (!KiemTraHopLe())
             {
-                Console.WriteLine("Nam ban nhap khong hop le!");
-                Console.Write("Moi ban nhap lai: ");
-                this.nam = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    Console.WriteLine("Nam ban nhap khong hop le!");
+                    Console.Write("Moi ban nhap lai: ");
+                    this.nam = Convert.ToInt32(Console.ReadLine());
+                }
+                catch
+                {
+                    System.Console.WriteLine("Khong dung dinh dang so nguyen");
+                    nam = -1;
+                }
             }
         }
         public void SetNgayThangNam(int ngay, int thang, int nam)
@@ -142,13 +166,21 @@ namespace KiemTraNgayHopLe
             this.nam = nam;
             while (!KiemTraHopLe())
             {
-                Console.WriteLine("Ngay thang nam ban nhap khong hop le! Moi ban nhap lai:");
-                Console.Write("Nhap ngay: ");
-                this.ngay = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Nhap thang: ");
-                this.thang = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Nhap nam: ");
-                this.nam = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    Console.WriteLine("Ngay thang nam ban nhap khong hop le! Moi ban nhap lai:");
+                    Console.Write("Nhap ngay: ");
+                    this.ngay = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Nhap thang: ");
+                    this.thang = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Nhap nam: ");
+                    this.nam = Convert.ToInt32(Console.ReadLine());
+                }
+                catch
+                {
+                    System.Console.WriteLine("Khong dung dinh dang so nguyen");
+                    ngay = -1; thang = -1; nam = -1;
+                }
             }
         }
         public bool KiemTraHopLe()
@@ -169,14 +201,22 @@ namespace KiemTraNgayHopLe
         {
             do
             {
-                System.Console.Write("Nhap ngay: ");
-                ngay = Convert.ToInt32(Console.ReadLine());
-                System.Console.Write("Nhap thang: ");
-                thang = Convert.ToInt32(Console.ReadLine());
-                System.Console.Write("Nhap nam: ");
-                nam = Convert.ToInt32(Console.ReadLine());
-                if (!KiemTraHopLe())
-                    System.Console.WriteLine("Ngay thang nam khong hop le! Moi ban nhap lai!");
+                try
+                {
+                    System.Console.Write("Nhap ngay: ");
+                    ngay = Convert.ToInt32(Console.ReadLine());
+                    System.Console.Write("Nhap thang: ");
+                    thang = Convert.ToInt32(Console.ReadLine());
+                    System.Console.Write("Nhap nam: ");
+                    nam = Convert.ToInt32(Console.ReadLine());
+                    if (!KiemTraHopLe())
+                        System.Console.WriteLine("Ngay thang nam khong hop le! Moi ban nhap lai!");
+                }
+                catch
+                {
+                    System.Console.WriteLine("Khong dung dinh dang so nguyen");
+                    ngay = -1; thang = -1; nam = -1;
+                }
             } while (!KiemTraHopLe());
         }
         public static CDate ReadFromConsole()
@@ -184,14 +224,22 @@ namespace KiemTraNgayHopLe
             CDate d = new CDate();
             do
             {
-                Console.Write("Nhap ngay: ");
-                d.ngay = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Nhap thang: ");
-                d.thang = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Nhap nam: ");
-                d.nam = Convert.ToInt32(Console.ReadLine());
-                if (d.nam < 1 || d.thang < 1 || d.thang > 12 || d.ngay < 1 || d.ngay > SoNgayTrongThang(d.thang, d.nam))
-                    Console.WriteLine("Ngay thang nam khong hop le moi ban nhap lai:");
+                try
+                {
+                    Console.Write("Nhap ngay: ");
+                    d.ngay = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Nhap thang: ");
+                    d.thang = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Nhap nam: ");
+                    d.nam = Convert.ToInt32(Console.ReadLine());
+                    if (d.nam < 1 || d.thang < 1 || d.thang > 12 || d.ngay < 1 || d.ngay > SoNgayTrongThang(d.thang, d.nam))
+                        Console.WriteLine("Ngay thang nam khong hop le moi ban nhap lai:");
+                }
+                catch
+                {
+                    System.Console.WriteLine("Khong dung dinh dang so nguyen");
+                    d.ngay = -1; d.thang = -1; d.nam = -1;
+                }
             } while (d.nam < 1 || d.thang < 1 || d.thang > 12 || d.ngay < 1 || d.ngay > SoNgayTrongThang(d.thang, d.nam));
             return d;
         }
@@ -212,12 +260,39 @@ namespace KiemTraNgayHopLe
             else
                 System.Console.WriteLine("Ngay thang nam khong hop le!");
             System.Console.WriteLine("\n3. Nhap ngay thang nam khac de kiem tra:");
-            System.Console.Write("Nhap ngay: ");
-            int ngay = Convert.ToInt32(Console.ReadLine());
-            System.Console.Write("Nhap thang: ");
-            int thang = Convert.ToInt32(Console.ReadLine());
-            System.Console.Write("Nhap nam: ");
-            int nam = Convert.ToInt32(Console.ReadLine());
+            int ngay = -1;
+            try
+            {
+                System.Console.Write("Nhap ngay: ");
+                ngay = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                System.Console.WriteLine("Khong dung dinh dang so nguyen");
+                Environment.Exit(0);
+            }
+            int thang = -1;
+            try
+            {
+                System.Console.Write("Nhap thang: ");
+                thang = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                System.Console.WriteLine("Khong dung dinh dang so nguyen");
+                Environment.Exit(0);
+            }
+            int nam = -1;
+            try
+            {
+                System.Console.Write("Nhap nam: ");
+                nam = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                System.Console.WriteLine("Khong dung dinh dang so nguyen");
+                Environment.Exit(0);
+            }
             CDate date2 = new CDate(ngay, thang, nam);
             System.Console.WriteLine("Ngay: {0}/{1}/{2}", date2.GetNgay(), date2.GetThang(), date2.GetNam());
             if (date2.KiemTraHopLe())
