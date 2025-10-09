@@ -28,8 +28,16 @@ namespace TongSNT
         {
             while (size <= 0)
             {
-                System.Console.Write("Nhap lai so nguyen duong n > 0: ");
-                size = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    System.Console.Write("Nhap lai so nguyen duong n > 0: ");
+                    size = Convert.ToInt32(Console.ReadLine());
+                }
+                catch
+                {
+                    System.Console.WriteLine("Khong dung dinh dang so nguyen");
+                    size = -1;
+                }
             }
             this.n = size;
             dem++;
@@ -60,10 +68,18 @@ namespace TongSNT
         {
             do
             {
-                System.Console.Write("Nhap so nguyen duong n: ");
-                n = Convert.ToInt32(Console.ReadLine());
-                if (n <= 0)
-                    System.Console.WriteLine("So n phai > 0! Moi ban nhap lai!");
+                try
+                {
+                    System.Console.Write("Nhap so nguyen duong n: ");
+                    n = Convert.ToInt32(Console.ReadLine());
+                    if (n <= 0)
+                        System.Console.WriteLine("So n phai > 0! Moi ban nhap lai!");
+                }
+                catch
+                {
+                    System.Console.WriteLine("Khong dung dinh dang so nguyen");
+                    n = -1;
+                }
             } while (n <= 0);
         }
         public int TongSoNguyenTo()
