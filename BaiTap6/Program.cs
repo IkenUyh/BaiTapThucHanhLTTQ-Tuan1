@@ -77,12 +77,20 @@ namespace MaTran
         {
             do
             {
-                Console.Write("Nhap so dong n: ");
-                n = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Nhap so cot m: ");
-                m = Convert.ToInt32(Console.ReadLine());
-                if (n < 1 || m < 1)
-                    Console.WriteLine("So dong va so cot phai lon hon 0! Moi nhap lai!");
+                try
+                {
+                    Console.Write("Nhap so dong n: ");
+                    n = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Nhap so cot m: ");
+                    m = Convert.ToInt32(Console.ReadLine());
+                    if (n < 1 || m < 1)
+                        Console.WriteLine("So dong va so cot phai lon hon 0! Moi nhap lai!");
+                }
+                catch
+                {
+                    System.Console.WriteLine("Khong dung dinh dang so nguyen");
+                    n = -1; m = -1;
+                }
             } while (n < 1 || m < 1);
             matrix = new int[n, m];
             Random rand = new Random();
@@ -244,8 +252,17 @@ namespace MaTran
             Console.WriteLine($"\nDong co tong lon nhat: {maxRow}");
             int sumNonPrime = mat.TongKhongPhaiSoNguyenTo();
             Console.WriteLine($"\nTong cac so khong phai so nguyen to: {sumNonPrime}");
-            Console.Write("\nNhap chi so dong can xoa: ");
-            int k = Convert.ToInt32(Console.ReadLine());
+            int k = -1;
+            try
+            {
+                Console.Write("\nNhap chi so dong can xoa: ");
+                k = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                System.Console.WriteLine("Khong dung dinh dang so nguyen");
+                Environment.Exit(0);
+            }
             mat.XoaDong(k);
             Console.WriteLine("\nMa tran sau khi xoa dong:");
             mat.Xuat();
